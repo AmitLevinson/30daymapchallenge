@@ -57,34 +57,6 @@ pdf_convert(pdf = "02_lines/02_lines.pdf",
             filenames = "02_lines/02_lines.png",
             format = "png", dpi = 400)
 
-# Regular output to image -------------------------------------------------
-
-# Quartez device was extremely slow
-X11("cairo")
-
-ggplot()+
-  geom_sf(data = streets$osm_lines,
-          inherit.aes = FALSE,
-          color = "black",
-          size = .6,
-          alpha = .8)+
-  geom_sf(data = small_streets$osm_lines,
-          inherit.aes = FALSE,
-          color = "grey15",
-          size = .4,
-          alpha = .6)+
-  coord_sf(xlim = c(34.73900 , 34.85400),
-           ylim = c(32.00450, 32.14750),
-           expand = FALSE)+
-  theme_void()+
-  geom_text(aes(x= 34.80100, y = 32.01820, label = "Tel-Aviv, IL"),
-            color = "grey15", family = "Kaushan Script", size = 10)+
-  labs(caption = "#30daymapchallenge | Day: 02\nData: OSM | @Amit_Levinson")+
-  theme(
-    plot.caption = element_text(family = "Kaushan Script", size = 6, color = "gray25"),
-    plot.caption.position =  "plot")
-
-ggsave("02_lines/02_lines.png", width = 6, height = 8)
 
 #Thanks to Chris' blog post on introducing us the plot:
 #https://ggplot2tutor.com/streetmaps/streetmaps/
