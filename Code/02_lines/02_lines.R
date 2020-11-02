@@ -51,12 +51,11 @@ plot_pdf <- ggplot()+
     plot.margin = unit(c(2,4,2,2), "mm"))
 
 # Used pdf method from Cédric Scherer's tidytuesday outputs
-ggsave(plot = plot_pdf, "02_lines/02_lines2.pdf", width = 8, height = 14, device = cairo_pdf)
+ggsave(plot = plot_pdf, filename = "Code/02_lines/02_lines2.pdf", width = 10, height = 18, device = cairo_pdf)
 
-pdf_convert(pdf = "02_lines/02_lines.pdf", 
-            filenames = "02_lines/02_lines.png",
+pdf_convert(pdf = "Code/02_lines/02_lines.pdf", 
+            filenames = "Code/02_lines/02_lines.png",
             format = "png", dpi = 400)
-
 
 #Thanks to Chris' blog post on introducing us the plot:
 #https://ggplot2tutor.com/streetmaps/streetmaps/
