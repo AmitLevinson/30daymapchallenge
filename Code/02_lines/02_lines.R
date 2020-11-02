@@ -4,9 +4,9 @@ library(sf)
 library(extrafont)
 library(pdftools)
 
-#this gets us the long and lat min and max suitable for Be'er-Sheva
+# This gets us the long and lat min and max suitable for Tel-Aviv.
+# See link at the bottom of the script for a blog to create your own.
 tv_coordinates <- getbb("Tel Aviv Israel")
-tv_coordinates
 
 # Start by getting the lines and point for the main streets
 streets <- tv_coordinates %>% 
