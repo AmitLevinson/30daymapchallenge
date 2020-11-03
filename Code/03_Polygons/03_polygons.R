@@ -22,12 +22,12 @@ ggplot()+
   theme_void()+
   labs(title = "<span style='color:#8A2BE2'>Hotels</span> in Israel", subtitle = "Labeled hotels are over the the green line",
        caption = "#30DayMapChallenge | Day: 03\nData: data.gov.il | @Amit_Levinson")+
-  geom_text_repel(data = filter(hotels, Name %in% c("Kalya", "Almog")), mapping = aes(x = X, y= Y, label = Name), point.padding = 0.4 ,box.padding = 1, family = "IBM Plex Sans", color = "gray15")+
+  geom_text_repel(data = filter(hotels, Name %in% c("Kalya", "Almog")), mapping = aes(x = X, y= Y, label = Name), point.padding = 0.4 ,box.padding = 1, family = "IBM Plex Sans", color = "gray15", size = 3)+
   xlim(c(34, 36.5))+
 theme(text = element_text(family = "IBM Plex Sans"),
-      plot.title = element_markdown(hjust = 0, size = 36, family = "IBM Plex Sans Medium"),
-      plot.subtitle = element_text(size = 15),
-      plot.caption = element_text(size = 10,family = "IBM Plex Sans Light", hjust = 0, color = "gray15"),
+      plot.title = element_markdown(hjust = 0, size = 28, family = "IBM Plex Sans Medium"),
+      plot.subtitle = element_text(size = 12),
+      plot.caption = element_text(size = 8,family = "IBM Plex Sans Light", hjust = 0, color = "gray15"),
       plot.margin = unit(c(4,4,4,4), "mm"))
 
-ggsave(filename = "Code/03_polygons/03_polygons.png", height = 10, width = 7)
+ggsave(filename = "Code/03_polygons/03_polygons.png", height = 8, width = 6, dpi = 450)
