@@ -13,12 +13,12 @@ Taken from the [GitHub page](https://github.com/tjukanovt/30DayMapChallenge) of 
 Enjoy!
 
 
-### Day 20 - Population
+### Day 20 - Population (Animated + static)
 
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/20_population/population.R)
 
 <p align = "center">
-<img src="Code/20_population/20_map.gif" alt="gif of israel map and a cartogram" width="700" height="450">
+<img src="Code/20_population/20_map.gif" alt="gif of israel map and a cartogram" width="350"><img src="Code/20_population/20_map-img.png" width = "350"/>
 </p>
 </br>
 
