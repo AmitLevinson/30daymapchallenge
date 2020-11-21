@@ -18,7 +18,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/20_population/population.R)
 
 <p align = "center">
-<img src="Code/20_population/20_map.gif" alt="gif of israel map and a cartogram" width="350"><img src="Code/20_population/20_map-img.png" width = "350"/>
+<img src="Code/20_population/20_map.gif" alt="gif of israel map and a cartogram" width="350"><img src="Code/20_population/20_map-img.png" width = "350" height="625"/>
 </p>
 </br>
 
