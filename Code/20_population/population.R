@@ -92,7 +92,7 @@ israel_combined <- israel_combined %>%
 p <- ggplot() + 
   geom_polygon(data = israel_combined  %>% arrange(order), aes(fill = pop_sum, x = long, y = lat, group = group) , size=0, alpha=0.9, color = "gray35") +
   scale_fill_continuous(trans = "reverse",name="Population (Millions)", guide = guide_legend(keyheight = unit(1, units = "mm"), keywidth=unit(6, units = "mm"), label.position = "bottom", title.position = 'top', ncol=1))+
-  labs(title = "Israel's population", subtitle = glue("Map transitions between a regular map to a cartogram, a map where\nthe geographic size is proportional to the population in that area.\nData is from Israel's CBS 2017 report and is aggregated at the district level"), caption = "Data: data.gov.il\n@Amit_Levinson")+
+  labs(title = "Israel's population", subtitle = "Map transitions between a regular map to a cartogram, a map where\nthe geographic size is proportional to the population in that area.\nData is from Israel's CBS 2017 report and is aggregated at the district level", caption = "Data: data.gov.il\n@Amit_Levinson")+
   theme_void() +
   theme(text = element_text(family = "IBM Plex Sans"),
         plot.margin = unit(c(3,3,3,5), "mm"),
@@ -110,3 +110,40 @@ p <- ggplot() +
 animate(p, start_pause = 3, width = 4, height = 7, units = "in", res = 150)
 
 anim_save("Code/20_population/20_map.gif")
+
+
+# Or make both plots just not animated  -----------------------------------
+
+library(patchwork)
+
+p1 <- ggplot() + 
+  geom_sf(data = israel_sf_joined, aes(fill = pop_sum) , size=0, alpha=0.9, color = "gray35") +
+  scale_fill_gradient(trans = "reverse",name="Population (Millions)",  guide = guide_legend(keyheight = unit(3, units = "mm"), keywidth=unit(8, units = "mm"), label.position = "bottom", title.position = 'top', nrow=1))+
+  labs(title = "Regular")+
+  theme_void() +
+  theme(plot.title = element_text(size = 14),
+        legend.title=element_text(size= 12),
+        legend.text = element_text(size = 10),
+        legend.spacing.x = unit(3, 'mm'))
+
+p2 <- ggplot() + 
+  geom_sf(data = cartogram, aes(fill = pop_sum) , size=0, alpha=0.9, color = "gray35") +
+  scale_fill_continuous(trans = "reverse",name="Population (Millions)", guide = NULL)+
+  ggtitle("Cartogram")+
+  labs(title = "Cartogram", caption = "Data: data.gov.il\n@Amit_Levinson")+
+  theme_void() +
+  theme(plot.title = element_text(size = 14),
+        plot.caption = element_text(size = 10, face = "italic", color = "gray45"))
+
+# Stick plots together
+p <- p1+p2+
+  plot_layout(guides = 'collect')+
+  plot_annotation(title = "Israel's Population", subtitle = "A regular map and a cartogram, a map where the geographic size is proportional\nto the population in that area. Data is from Israel's CBS 2017 report and is\naggregated at the district level",
+                  theme = theme(plot.title = element_text(size = 18, face = "bold"),
+                                plot.subtitle = element_text(size = 14, color = "gray35")))  &
+  theme(text = element_text('IBM Plex Sans'),
+        plot.title = element_text(face = "bold"),
+        legend.position = "bottom",
+        plot.margin = unit(c(2,2,4,2), "mm"))
+
+ggsave("Code/20_population/20_map-img.png", p, height = 13, width = 8, units = "in", dpi = 300)
