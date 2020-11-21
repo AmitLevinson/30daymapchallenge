@@ -18,7 +18,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/20_population/population.R)
 
 <p align = "center">
-<img src="/img/30daymap/20_map.gif" alt="gif of israel map and a cartogram" width="700" height="450">
+<img src="Code/08_yellow/20_map.gif" alt="gif of israel map and a cartogram" width="700" height="450">
 </p>
 </br>
 
@@ -40,7 +40,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/07_green/07_green.R)
 
 <p align = "center">
-<img src="https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/07_green/07_green.png" alt="Mapping trees in San Francisco" width="700">
+<img src="Code/07_green/07_green.png" alt="Mapping trees in San Francisco" width="700">
 </p>
 </br>
 
@@ -49,7 +49,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/03_Polygons/03_polygons.R)
 
 <p align = "center">
-<img src="https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/03_Polygons/03_polygons.png" width="700" height="350">
+<img src="Code/03_Polygons/03_polygons.png" width="700">
 </p>
 </br>
 
@@ -60,7 +60,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/02_lines/02_lines.R)
 
 <p align = "center">
-<img src="https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/02_lines/02_lines.png" width="700" height="300">
+<img src="Code/02_lines/02_lines.png" width="700">
 </p>
 </br>
 
@@ -69,7 +69,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/01_points/01_points.R)
 
 <p align = "center">
-<img src="https://github.com/AmitLevinson/30daymapchallenge/blob/main/Code/01_points/01_points.png" width="700">
+<img src="Code/01_points/01_points.png" width="700">
 </p>
 
 <a href="#top"> Back to top</a>
