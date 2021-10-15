@@ -1,0 +1,32 @@
+{
+    "id": "2DFFA26A",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1606158591692.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "expression": "info_route2",
+        "caption": "info_route2",
+        "totalObservations": "75",
+        "displayedObservations": "75",
+        "variables": "35",
+        "cacheKey": "CAFA1BDB",
+        "object": "info_route2",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=info_route2&cache_key=CAFA1BDB&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1606158566,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1606158591692,
+    "read_only": false,
+    "read_only_alternatives": []
+}

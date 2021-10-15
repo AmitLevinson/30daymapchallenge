@@ -1,0 +1,74 @@
+library(readr)
+library(dplyr)
+library(purrr)
+library(ggmap)
+library(tidyr)
+
+
+# read data
+stops <- read_delim("Data/israel-public-transportation/stops.txt", delim = ",")
+
+stops_time <- read_delim("Data/israel-public-transportation/stop_times.txt", delim = ",")
+
+trips <- read_delim("Data/israel-public-transportation/trips.txt", delim = ",")
+
+# Get trip id for bus I usually take:
+relevant_raw <- stops_time %>% 
+  filter(trip_id == "53316764_211120")
+
+# Join with trips
+info_joined <- left_join(relevant_raw, stops) %>% 
+  left_join(trips)
+
+# Get beer-Sheva's map
+b7_map <- get_googlemap(center = c(34.791462 , 31.252973),zoom = 13, scale = 2, maptype = "roadmap")
+
+
+
+# Get addresses for lat and long locations
+info_address <- info_joined %>% 
+  mutate(address = map2_chr(info_joined$stop_lon, info_joined$stop_lat, ~revgeocode(c(.x, .y),  output = "address")))
+
+info_address <- info_address %>% 
+  mutate(
+    address = ifelse(stop_code == 10986, "Hatzvi 149, Be'er Sheva, Israel", address)
+  )
+
+# Now get routes from the points
+info_route <- info_address %>% 
+  mutate(
+    from_add = address,
+    # Create a corresponding to address
+    to_add = lead(address),
+    # Colelct relevant routes
+    drive_route = map2(from_add,to_add, ~ route(from = .x, to = .y),mode= "driving", alternatives = TRUE)) %>% 
+  unnest(drive_route)
+
+  
+  ggmap(b7_map)+
+  geom_leg(aes(x = start_lon, xend = end_lon, y = start_lat, yend = end_lat), data = info_route)+
+    geom_point(data = info_route, aes(x = stop_lon, y= stop_lat))+
+    theme_void()
+
+mapview::mapview(info_route)
+  
+saveRDS(info_route, "movement/20_bus-routes.rds")
+info_route2 <- readRDS("movement/20_bus-routes.rds")
+
+list.files(pattern = ".shp$", recursive = TRUE)
+
+
+
+library(osrm)
+mapview::mapview(info_route)
+library(stplanr)
+
+
+ggmap(b7_map) +
+  geom_leg(data = info_route)
+  
+geom_point(data = relevant, aes(x= stop_lon, y= stop_lat))+
+  geom_line(data = relevant,aes (x = stop_lon, y = stop_lat))
+?geom_leg
+
+

@@ -1,0 +1,32 @@
+{
+    "id": "DFA3D738",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1606158882054.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "expression": "info_address",
+        "caption": "info_address",
+        "totalObservations": "31",
+        "displayedObservations": "31",
+        "variables": "22",
+        "cacheKey": "5F1A4B72",
+        "object": "info_address",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=info_address&cache_key=5F1A4B72&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1606158566,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1606158882054,
+    "read_only": false,
+    "read_only_alternatives": []
+}
