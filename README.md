@@ -19,7 +19,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/2020/Code/20_population/population.R)
 
 <p align = "center">
-<img src="Code/20_population/20_map.gif" alt="gif of israel map and a cartogram" width="350"><img src="Code/20_population/20_map-img.png" width = "350" height="625"/>
+<img src="2020/Code/20_population/20_map.gif" alt="gif of israel map and a cartogram" width="350"><img src="Code/20_population/20_map-img.png" width = "350" height="625"/>
 </p>
 </br>
 
@@ -30,7 +30,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/2020/Code/08_yellow/08_yellow.R)
 
 <p align = "center">
-<img src="Code/08_yellow/08_yellow.png" alt="Map of light posts in beer-sheva" width="700">
+<img src="2020/Code/08_yellow/08_yellow.png" alt="Map of light posts in beer-sheva" width="700">
 </p>
 </br>
 
@@ -41,7 +41,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/2020/Code/07_green/07_green.R)
 
 <p align = "center">
-<img src="Code/07_green/07_green.png" alt="Mapping trees in San Francisco" width="700">
+<img src="2020/Code/07_green/07_green.png" alt="Mapping trees in San Francisco" width="700">
 </p>
 </br>
 
@@ -50,7 +50,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/2020/Code/03_Polygons/03_polygons.R)
 
 <p align = "center">
-<img src="Code/03_Polygons/03_polygons.png" width="700">
+<img src="2020/Code/03_Polygons/03_polygons.png" width="700">
 </p>
 </br>
 
@@ -61,7 +61,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/2020/Code/02_lines/02_lines.R)
 
 <p align = "center">
-<img src="Code/02_lines/02_lines.png" width="700">
+<img src="2020/Code/02_lines/02_lines.png" width="700">
 </p>
 </br>
 
@@ -70,7 +70,7 @@ Enjoy!
 [Link to code](https://github.com/AmitLevinson/30daymapchallenge/blob/main/2020/Code/01_points/01_points.R)
 
 <p align = "center">
-<img src="Code/01_points/01_points.png" width="700">
+<img src="2020/Code/01_points/01_points.png" width="700">
 </p>
 
 <a href="#top"> Back to top</a>
