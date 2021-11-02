@@ -31,8 +31,8 @@ overlapping_segments <- overline(routes, attrib = "count")
 p <- leaflet(overlapping_segments) %>% 
   addProviderTiles(providers$CartoDB.DarkMatter) %>%
   addPolylines(weight = overlapping_segments$count / 6, color = "white") %>% 
-  addControl(html = paste(tags$h1(HTML("Streets traveled<br>in Tel-Aviv"), style = "color:white; font-family:Merriweather; font-size: 28pt; padding-left: 15px; line-height: 1.2em;"),
-                          tags$div(HTML("Most commonly traveled streets from a<br>sample of 1000 routes."), style = "color:white; font-family:Segoe UI; font-size: 10pt; padding-left: 15px; margin-top:-20px"))
+  addControl(html = paste(tags$h1(HTML("Streets traveled<br>in Tel-Aviv"), style = "color:white; font-family:Merriweather; font-size: 28pt; padding-left: 12px; line-height: 1.2em;"),
+                          tags$div(HTML("Most commonly traveled streets<br>from a sample of 1000 routes."), style = "color:white; font-family:Segoe UI; font-size: 15pt; padding-left: 15px; margin-top:-20px"))
                           , className = "fieldset {
     border: 0;
 }",  position = "topleft") %>% 

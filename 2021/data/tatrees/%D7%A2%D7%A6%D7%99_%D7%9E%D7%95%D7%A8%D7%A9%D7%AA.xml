@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?><MD_Metadata xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xalan="http://xml.apache.org/xalan" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xmlns="http://www.isotc211.org/2005/gmd">
+    <characterSet>
+        <MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
+    </characterSet>
+    <hierarchyLevel>
+        <MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" codeSpace="ISOTC211/19115">dataset</MD_ScopeCode>
+    </hierarchyLevel>
+    <hierarchyLevelName>
+        <gco:CharacterString>dataset</gco:CharacterString>
+    </hierarchyLevelName>
+    <contact gco:nilReason="missing"/>
+    <dateStamp gco:nilReason="missing"/>
+    <metadataStandardName>
+        <gco:CharacterString>ISO 19139 Geographic Information - Metadata - Implementation Specification</gco:CharacterString>
+    </metadataStandardName>
+    <metadataStandardVersion>
+        <gco:CharacterString>2007</gco:CharacterString>
+    </metadataStandardVersion>
+    <identificationInfo>
+        <MD_DataIdentification>
+            <citation gco:nilReason="missing"/>
+            <abstract>
+                <gco:CharacterString>חשיבותם ותרומתם של עצי ישראל היא רבה
+לנוף, לאסתטיקה, לאקלים, לאיכות הסביבה ולמורשתו של עם. העצים הינם הייצור החי בעל
+המימדים הגדולים ביותר ובעל משך חיים הארוך ביותר! העצים מהווים את נוף הארץ -
+זכר לעבר, סמל להווה ותקווה לעתיד. משימתו העיקרית של  אגף יער ואילנות במשרד החקלאות ופיתוח הכפר
+הינה להגן ולשמור על עצי ארצנו – עצים הגדלים בבר ובתרבות, בערים, בהתיישבות
+הכפרית בצידי הדרכים ובשטחים הפתוחים. טיפול נכון בעצים משפר את איכות חיינו
+בעשרות מונים. אחת הדרכים להגנה על עצים הינה חקיקה, אך אין ספק שההגנה הטובה
+ביותר על עצים הינה אהבתם. חינוך הציבור הרחב, הילדים והנוער לאהבת עצים יסייעו
+בהגנה על סביבתנו. אהבת עצים מתחילה בהכרת העצים, בלמידה על תרומתם ובהאזנה
+לסיפוריהם. שכבת עצי מורשת הנו אתר פעיל מתעדכן וחי הבא לחשוף את הציבור הרחב
+לעצים מיוחדים וותיקים המסמלים את הקשר לתרבות הישראלית , לארץ ישראל ( באופן טבעי
+או יזום ) לאורך מאות השנים האחרונות . באתר מסומנים כיום מאות עצים מעניינים
+וחשובים, עצים היסטוריים, עצים ותיקים, עצים מרשימים, עצים ייחודיים ועצים עם
+סיפור מיוחד. המידע באתר נאסף במשך למעלה מ-20 שנה על ידי המחלקה להנדסת הצומח,
+גננות ונוף במשרד החקלאות ופיתוח הכפר וכן ע&amp;quot;י מדריכים ומתנדבים שונים במסגרת
+סקר עצים בוגרים בישראל. הנתונים  שתפגשו
+באתר נמדדו לעיתים על פי מידע מדויק, עדות אישית או היסטורית ולעיתים על פי הערכה
+מקצועית. העצים מסומנים על המפה במקום בו הם נמצאו אולם לעיתים , עקב טעויות
+מיפוי, הסימון אינו מדויק ונדרש עדכון. לכל עץ יש מידע בסיסי ומקום לתמונה
+(שתיווסף בקרוב). מאחר ויתכנו אי דיוקים באתר. נשמח לקבל את עזרת הציבור בעדכון
+הנתונים באמצעות משלוח מייל לכתובת המצורפת. בנוסף, ניתן ורצוי להעלות מידע חדש על
+עצים חדשים שלא ממופים בשכבה באמצעות משלוח המידע הרלוונטי או באמצעות קבלת הרשאה
+מיוחדת לשימוש באפליקציה סלולרית לעדכון השכבה. אנו קוראים לציבור הרחב לטייל
+בעקבות עצים ולהתרשם מהם ומסיפוריהם. ביקור בסביבתו של עץ בוגר יכול להיות חוויה
+מרגשת במיוחד, אם רק נדע להקשיב ולהעריך, העץ בוודאי יוכל &amp;quot;לספר&amp;quot; לנו על
+כל מה שהתרחש בסביבתו. אפשר לנוח ולהירגע בצלו וליהנות מהנוף, מהשקט, ממופעי העץ
+וכמובן לטייל באתרים הקרובים לו. משפחות, קהילות, בתי ספר וגנים יכולים ומוזמנים
+לאמץ עץ ולעודד את הרשות המקומית בה מתגוררים, העצים מספקים לנו שירותים רבים
+בנאמנות שאין דומה לה. זו הזדמנות להעריך את תרומתם ולהחזיר להם אהבה, טיפול
+והגנה, לשמור על העץ, לשלט את העץ ולספר את סיפורו. נשמח לקבל מידע נוסף על עצים
+שנכללים בסקר העצים הבוגרים של המשרד ועל עצים חדשים, הראויים להיכנס לסקר העצים
+או לחוברת הטיולים הבאה. מידע נוסף אודות עצים והטיפול בהם ניתן למצוא באתר
+האינטרנט של  משרד החקלאות, פקיד היערות.</gco:CharacterString>
+            </abstract>
+            <purpose>
+                <gco:CharacterString>שכבה לאיסוף מידע על עצים בוגרים ומיוחדים בישראל.</gco:CharacterString>
+            </purpose>
+            <credit>
+                <gco:CharacterString>האגף ליער ואילנות, תחום GIS / משרד החקלאות ופיתוח הכפר</gco:CharacterString>
+            </credit>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>עצי מורשת</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>משרד החקלאות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>שימור</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים הסטוריים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>פקיד היערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יער ואילנות</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>עצי מורשת</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>משרד החקלאות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>שימור</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים הסטוריים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>פקיד היערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יער ואילנות</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>עצי מורשת</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>משרד החקלאות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>שימור</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים הסטוריים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>פקיד היערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יער ואילנות</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>עצי מורשת</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>משרד החקלאות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>שימור</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים הסטוריים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>פקיד היערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יער ואילנות</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>עצי מורשת</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>משרד החקלאות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>שימור</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים הסטוריים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>פקיד היערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יער ואילנות</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>עצי מורשת</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>משרד החקלאות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>שימור</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים הסטוריים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>פקיד היערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יער ואילנות</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>עצי מורשת</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>משרד החקלאות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>שימור</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים הסטוריים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>פקיד היערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יער ואילנות</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>עצי מורשת</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>משרד החקלאות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>שימור</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>עצים הסטוריים</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>פקיד היערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יערות</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>יער ואילנות</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <resourceConstraints>
+                <MD_Constraints>
+                    <useLimitation>
+                        <gco:CharacterString>
+החומר הועלה על ידי תחום ממ"ג, אגף בכיר טכנולוגיות דיגיטליות ומידע. משרד החקלאות ופיתוח הכפר: כל הזכויות שמורות למדינת ישראל © המפה/שכבה אינה מהווה אסמכתא לכל עניין שהוא ולכל הליך לפי דין. המשתמש בלבד אחראי לדרך בה יעשה שימוש בפרסום. המדינה איננה אחראית לכך שהפרסום יענה לצורכי המשתמש. המדינה לא תישא באחריות לנזקים מכל סוג שהוא, בין ישירים ובין עקיפים, אם נגרמו למשתמש או לכל צד ג' כתוצאה מן השימוש בפרסום. המדינה איננה אחראית לכל שינוי בפרסום שנעשה על ידי המשתמש או צד ג'. למידע נוסף צרו קשר בדוא"ל omerb@moag.gov.il
+</gco:CharacterString>
+                    </useLimitation>
+                </MD_Constraints>
+            </resourceConstraints>
+            <language gco:nilReason="missing"/>
+            <characterSet>
+                <MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
+            </characterSet>
+        </MD_DataIdentification>
+    </identificationInfo>
+</MD_Metadata>

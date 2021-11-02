@@ -25,7 +25,6 @@ telavivggmap <- get_googlemap(center = "tel aviv, israel", zoom = 13,style=c(fea
 ggmap(telavivggmap)+
   geom_sf(data = clean_data, aes(color = TreeAge), inherit.aes = FALSE, size = 1.5)+
   scale_color_brewer(palette = "YlOrBr", na.value="grey", name = "Tree age (Years)")+
-  theme_void()+
   guides(color = guide_legend(nrow = 1, byrow = TRUE,override.aes = list(size=3)))+
   labs(title = "Historical and preserved trees across Tel-Aviv",
        subtitle = "",
@@ -40,7 +39,13 @@ ggmap(telavivggmap)+
     legend.key.width = unit(5,"mm"),
     legend.title = element_text(size = 11, color = "gray10"),
     legend.text = element_text(size = 10, color = "gray25"),
-    plot.caption = element_text(hjust = 0.5, color = "gray45", size = 10)
+    plot.caption = element_text(hjust = 0.5, color = "gray45", size = 10),
+    plot.margin = margin(6,2,6,2,"mm"),
+    panel.background = element_rect(fill = "white", color = NA),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    legend.key=element_blank()
   )
 
-ggsave("2021/01_points/trees.png",height = 8, width = 6, dpi = 500)
+ggsave("2021/01_points/trees.png",height = 8, width = 7, dpi = 500)
