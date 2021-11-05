@@ -3,7 +3,7 @@ library(sf)
 library(dplyr)
 library(ggplot2)
 library(patchwork)
-junebug::font_hoist("Alegreya") # Hoist Alegreya to enjoy it's various weights
+junebug::font_hoist("Alegreya") # Hoist Alegreya to enjoy its various weights
 
 
 # Data collections & setup ------------------------------------------------
