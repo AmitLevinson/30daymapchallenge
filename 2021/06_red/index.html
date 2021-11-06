@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css" rel="stylesheet">
+    <script src ="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
+<style>
+    body {margin: 0; padding: 0;}
+    #map {position: absolute; top: 0; bottom:0; width: 100%; }
+</style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYW1pdGxldmluc29uIiwiYSI6ImNrdm8ycHp1ZjFiNjgyb281MTh6dTJqN3kifQ.TleG3wzEyARi4jCS21fpqg'
+        const map = new mapboxgl.Map ({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: [34.7977049,31.2500537],
+            zoom: 12.75
+        });
+
+    map.on('load', () => {
+     
+        map.addSource('shelters', { type: 'geojson', data: 'shelters.geojson'});
+
+        map.addLayer ({
+            'id': 'shelterlocations',
+            'type': 'circle',
+            'source': 'shelters',
+            'paint': {
+                'circle-radius': 3,
+                'circle-color': '#B42222'
+            }
+        });
+    });
+
+    </script>
+</body>
+</html>
