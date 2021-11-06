@@ -66,7 +66,7 @@ combined <- pny + pjlm +
                   caption = "Data: OSM | Amit_Levinson",
                   theme = theme(
                     plot.caption = element_text(size = 11, family = "Alegreya", color = "gray25", hjust = 0),
-                    plot.margin = margin(6,2,6,2,"mm")
+                    plot.margin = margin(4,0,4,0,"mm")
                   ))
 
 ggsave("2021/05_osm/street.png" ,plot = combined, width = 13, height = 8)  

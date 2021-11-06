@@ -67,7 +67,7 @@ ggplot(full_grid_stops)+
     axis.title = element_blank(),
     axis.ticks = element_blank(),
     panel.grid = element_blank(),
-    legend.title = element_markdown(size = 10, color = "gray15"),
+    legend.title = element_markdown(size = 10, color = "gray15", hjust = 0),
     plot.caption = element_text(hjust = 0.5, size = 8, color = "gray35"),
     legend.text = element_text(size = 8, hjust = 0, color = "gray15"),
     legend.position=c(0.3,0.75),

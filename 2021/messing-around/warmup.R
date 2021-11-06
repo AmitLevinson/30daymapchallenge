@@ -155,3 +155,16 @@ tel_aviv_file <- st_transform(tel_aviv_file, 4326)
 
 
 
+# Bus routes --------------------------------------------------------------
+
+
+# Check out more at 
+# https://transitfeeds.com/p/ministry-of-transport-and-road-safety/820
+
+routes
+routes <- fread("2021/data/stop_times.txt")
+setkey(routes, "stop_id")
+setkey(dat, "stop_id")
+
+dat[routes, on = "stop_id", nomatch=0][trip_id == "44092626_041121",.(mean(arrival_time)), by = trip_id]
+

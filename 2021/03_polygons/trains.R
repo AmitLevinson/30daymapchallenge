@@ -47,7 +47,7 @@ isr_voronoi_poloygon <- isr_voronoi_poloygon %>%
          area = as.numeric(set_units(area, km^2))) %>% 
   st_transform(crs = 4326)
 
-
+# Finally, plot
 ggplot(isr_voronoi_poloygon) +
   geom_sf(aes(fill = area), color = NA) +
   geom_point(data = dat, aes(x = X, y = Y), inherit.aes = FALSE, size = 0.05, alpha = 0.7)+
@@ -70,7 +70,10 @@ ggplot(isr_voronoi_poloygon) +
     legend.title = element_markdown(size = 10),
     plot.caption = element_text(hjust = 0.5, size = 8, color = "gray15"),
     legend.text = element_text(size = 8),
-    plot.margin = margin(6,2,6,2,"mm")
+    plot.margin = margin(6,2,6,2,"mm"),
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.background = element_rect(fill = "white", color = NA)
+    
   )
 
 ggsave("2021/03_polygons/trains.png", width = 8, height = 7)
