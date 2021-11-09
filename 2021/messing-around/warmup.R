@@ -168,3 +168,24 @@ setkey(dat, "stop_id")
 
 dat[routes, on = "stop_id", nomatch=0][trip_id == "44092626_041121",.(mean(arrival_time)), by = trip_id]
 
+
+# elevater ----------------------------------------------------------------
+
+
+
+
+isrraster <- get_elev_raster(locations = isrfull, z = 9, clip = "locations")
+
+elevation_data <- as.data.frame(isrraster, xy = TRUE)
+
+
+colnames(elevation_data)[3] <- "elevation"
+# remove rows of data frame with one or more NA's,using complete.cases
+elevation_data <- elevation_data[complete.cases(elevation_data), ]
+
+ggplot() +
+  geom_point(data = elevation_data, aes(x = x, y = y, color = elevation)) +
+  scale_color_gradient(low = "white", high = "black")+
+  coord_sf() +
+  theme_void()
+?get_elev_raster

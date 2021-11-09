@@ -9,7 +9,7 @@ tel_aviv_file <- read_sf(paste0(tel_aviv_file_name))
 # Provide relevant crs to Tel-Aviv
 tel_aviv_file <- st_transform(st_set_crs(tel_aviv_file, 2039), 4326)
 
-biketrail <- read_sf("2021/data/biketrails/Bicycle Routes.shp")
+biketrail <- read_sf("2021/data/biketrail/Bicycle Routes.shp") 
 
 
 # Calculate length of routes ------------------------------------------------------------

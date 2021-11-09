@@ -16,7 +16,7 @@ telavivggmap <- get_googlemap(center = "tel aviv, israel", zoom = 13,style=c(fea
 
 ggmap(telavivggmap)+
   geom_sf(data = wave, inherit.aes = FALSE, fill = NA, color = "#1f73b7", size =1.25)+
-  labs(title = "Area covered by a<span style='color:#1f73b7;'> 5 meter <b>tzunami wave</span></b> in Tel-Aviv",
+  labs(title = "Area covered by a<span style='color:#1f73b7;'> 5 meter <b>tsunami wave</span></b> in Tel-Aviv",
        caption = "Data: Tel-Aviv Open Data | Amit_Levinson")+
   theme_void()+
   theme(

@@ -42,11 +42,7 @@ p <- leaflet() %>%
                           tags$div(HTML("How far can you reach when<br>walking away from Dizengoff<br>square, Tel-Aviv, IL."), style = "color:black; font-family:Segoe UI; font-size: 15pt; padding-left: 8px; margin-top:-20px")), className = "fieldset {
     border: 0;
 }",  position = "topleft") %>% 
-  addControl(html = tags$div(HTML("Data: openrouteservice &#8226; Amit_Levinson"), style = "color:black; font-family:Segoe UI; font-size: 12pt; padding-left: 15px;"), className = "fieldset {border: 0;}", position = "bottomleft") %>% 
-  addControl(html = tags$legend(style = 'background:none;'), className = "fieldset {
-    border: 0;
-}")
-
+  addControl(html = tags$div(HTML("Data: openrouteservice &#8226; Amit_Levinson"), style = "color:black; font-family:Segoe UI; font-size: 12pt; padding-left: 15px;"), className = "fieldset {border: 0;}", position = "bottomleft")
 
 # Save widget
 saveWidget(p, "2021/10_raster/walk_from_dizengof.html")
