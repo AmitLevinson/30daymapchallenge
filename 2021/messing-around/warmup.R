@@ -188,4 +188,4 @@ ggplot() +
   scale_color_gradient(low = "white", high = "black")+
   coord_sf() +
   theme_void()
-?get_elev_raster
+

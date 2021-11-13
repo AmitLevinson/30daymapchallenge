@@ -1,6 +1,6 @@
 
 ## Code credited to gist from below and the d6berlin R package!
-## Also thanks to Georgis for pointing it out @geokaramanis
+## Also thanks to Georgios for pointing it out @geokaramanis
 
 library(sf)
 library(rnaturalearth)
@@ -143,7 +143,7 @@ p_globe <-  ggplot2::ggplot()+
     ggplot2::geom_sf(data = circle, fill = "white") +
     ggplot2::geom_sf(data = circle,  alpha = .5) +
     ggplot2::geom_sf(data = sf::st_collection_extract(visible),
-                     fill = "gray45", color = NA) +
+                     fill = "gray45", color = "gray55") +
     ggplot2::geom_sf(data = filter(visible, name_long  == "Israel"), fill = "#4B0082", color = NA) +
     ggplot2::geom_sf(data = circle, color = "grey60", fill = NA, size = .5) +
     geom_sf(data = inset_line, color = "gray75", size = 0.3, linetype = "dashed")+
@@ -183,9 +183,10 @@ p_globe + inset_element(p_small, left = 0.6, bottom = 0.7, right = 0.8, top = 1)
     title = "Countries I visited in the past year",
     caption = "@Amit_Levinson",
     theme = theme(
-      title = element_text(size = 18, family = "Playfair Display", face = "bold", hjust = 0),
+      title = element_text(size = 16, family = "Playfair Display", face = "bold", hjust = 0),
       plot.caption = element_text(size = 8, family = "Playfair Display", color = "gray35", hjust = 0.5),
-      plot.margin = margin(4,0,4,0,"mm")
+      plot.margin = margin(4,8,4,8,"mm")
     ))
   
-ggsave("2021/13_natural-earrth/visited.png", width = 7, height = 8)
+ggsave("2021/13_natural-earth/visited.png", width = 8, height = 8)
+
