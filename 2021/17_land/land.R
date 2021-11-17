@@ -21,15 +21,15 @@ ta_tiles <- ras_ta %>%
   as.data.frame(xy = TRUE) %>%
   filter(!is.na(layer)) %>% 
   arrange({{direction}}) %>% 
-  # Here we split the x-y coordinates according to % of each (non/)vaccinated group
+  # Split the raster object into deciles by id, giving us 10 equal sized groups of points.
   mutate(id = 1:nrow(.)) %>% 
   mutate(point_to_labels = as.numeric(cut(id, breaks = quantile(id,probs = 0:10/10), labels = seq(10, 100, 10), include.lowest = TRUE)),
+         # Not sure but we need to convert to numeric
          point_to_labels = point_to_labels * 10,
+         # give a different color to each adjacent area
          fillcolor = ifelse( (point_to_labels / 10) %% 2 == 1, "#5E7893", "#2F4169"))
 
-
 p <- ggplot(ta_tiles)+
-  # The tiles that fill the map
   geom_sf(data = tel_aviv_file, inherit.aes = FALSE, fill = NA, color = 'gray55')+
   geom_tile(aes(x = x,y = y,fill = fillcolor, color = fillcolor), size =.3, show.legend = FALSE, alpha = 0.3)+
   theme_void()+
@@ -40,10 +40,13 @@ p <- ggplot(ta_tiles)+
   scale_color_identity()
 
 return (p)
+
 }
 
+# vertical and horizontal map
 p_hor <- draw_plot(ras_ta, direction = y)
 p_ver <- draw_plot(ras_ta, direction = x)
+
 
 p_hor + p_ver+
 plot_annotation(
