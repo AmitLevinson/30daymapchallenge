@@ -9,7 +9,7 @@ library(htmltools)
 library(glue)
 library(htmlwidgets)
 library(webshot)
-
+library(purrr)
 
 Sys.setlocale("LC_ALL", "Hebrew")
 
@@ -26,8 +26,11 @@ golda <- readxl::read_xlsx("2021/data/golda_locations.xlsx") %>%
 
 golda_sf <- golda %>% 
   st_as_sf(coords = c("long", "lat"), crs = 4326, remove = FALSE) %>% 
-  filter(lengths(st_intersects(., tel_aviv_file)) > 0) %>% 
-  mutate(latlong = paste0(lat, "+", long))
+  # Get only what's in Tel-Aviv
+  filter(lengths(st_intersects(., tel_aviv_file)) > 0)
+
+# TSP analysis based on Jerry Shannon's piece:
+# https://twitter.com/jerry_shannon/status/1455525819066028037/photo/1
 
 distance <- st_distance(golda_sf, golda_sf)
 distance <- as.matrix(distance) / 1000
@@ -37,8 +40,6 @@ rownames(distance) <- golda_sf$id
 
 # covert to distance matrix of upper/lower
 distance <- as.dist(distance)
-
-
 
 # TSP prob & solving ------------------------------------------------------
 tsp <- TSP(distance)
@@ -54,19 +55,19 @@ methods <- c(
   "two_opt"
 )
 
-library(purrr)
 
 tours <- methods %>% map(function(method) {
   solve_TSP(tsp, method)
 })
 
-
+# Find the optimal method (Though also I want it to be intuitive for me)
 dotchart(sort(c(sapply(tours, tour_length), optimal = 30)),
           xlab = "tour length", xlim = c(0, 35))
 
   
 
-# Go with default of two_opt
+# Go with insertion algorithm, specifically farthest, read more here:
+# https://cran.r-project.org/web/packages/TSP/vignettes/TSP.pdf
 tour <- solve_TSP(tsp, method = "farthest_insertion")
 
 # Order of locations in tour
@@ -86,19 +87,20 @@ golda_route <- map_dfr(seq(nrow(addresses)-1), function (n){
     mutate(section = n)
 })
 
-                
+# Add location labels       
 make_label <- function(street ){
   glue("<div style='text-align:right;'>{street}</div>") %>% 
     HTML()}
 
+# Map map
 p <- leaflet() %>%
-  # addTiles() %>% 
   addProviderTiles("CartoDB.Positron",options = providerTileOptions(minZoom = 12)) %>%
-  # addMarkers(data = golda_sf, icon = ~ice_cream_icon, label  = ice_cream_labels) %>%
   addPolylines(data = golda_route, weight = 2, color = "#080E46") %>% 
+  # Add emoji as points
   addLabelOnlyMarkers(data = golda_sf, label = HTML("&#127846;"),
                       labelOptions = labelOptions(noHide = T, textOnly = T,
                                                   "font-size" = "6px")) %>% 
+  # Add a start label
   addLabelOnlyMarkers(data = golda_route[1,], ~fx, ~fy, label = HTML("Start<br>&#8595;"),
             labelOptions = labelOptions(noHide = T, direction = "top", textOnly = TRUE, 
                                         style = list(
