@@ -4,6 +4,12 @@ library(sf)
 library(dplyr)
 library(osrm)
 library(stplanr)
+library(ggplot2)
+library(htmltools)
+library(glue)
+library(htmlwidgets)
+library(webshot)
+
 
 Sys.setlocale("LC_ALL", "Hebrew")
 
@@ -54,8 +60,14 @@ tours <- methods %>% map(function(method) {
   solve_TSP(tsp, method)
 })
 
+
+dotchart(sort(c(sapply(tours, tour_length), optimal = 30)),
+          xlab = "tour length", xlim = c(0, 35))
+
+  
+
 # Go with default of two_opt
-tour <- solve_TSP(tsp)
+tour <- solve_TSP(tsp, method = "farthest_insertion")
 
 # Order of locations in tour
 tour_order <- as.integer(tour)
@@ -65,7 +77,7 @@ addresses <- golda_sf[tour_order,]
 
 
 # Build route
-golda_route <- map_dfr(c(1:20), function (n){
+golda_route <- map_dfr(seq(nrow(addresses)-1), function (n){
   route(
     from = addresses[n,],
     to = addresses[n + 1,],
@@ -74,43 +86,37 @@ golda_route <- map_dfr(c(1:20), function (n){
     mutate(section = n)
 })
 
-library(ggplot2)
-
-ice_cream_icon <- makeIcon("https://upload.wikimedia.org/wikipedia/commons/2/2c/Ice-cream-solid.svg", iconWidth = 8, iconHeight = 12)
-
+                
 make_label <- function(street ){
   glue("<div style='text-align:right;'>{street}</div>") %>% 
     HTML()}
-library(htmltools)
-library(glue)
-# Create the labels
 
-
-ice_cream_labels <- map(golda_sf$street, make_label)
-
-
-
-leaflet() %>%
+p <- leaflet() %>%
   # addTiles() %>% 
   addProviderTiles("CartoDB.Positron",options = providerTileOptions(minZoom = 12)) %>%
-  addMarkers(data = golda_sf, icon = ~ice_cream_icon, label  = ice_cream_labels) %>%
-  addPolylines(data = golda_route, weight = 2, color = "#bc360a") %>% 
+  # addMarkers(data = golda_sf, icon = ~ice_cream_icon, label  = ice_cream_labels) %>%
+  addPolylines(data = golda_route, weight = 2, color = "#080E46") %>% 
+  addLabelOnlyMarkers(data = golda_sf, label = HTML("&#127846;"),
+                      labelOptions = labelOptions(noHide = T, textOnly = T,
+                                                  "font-size" = "6px")) %>% 
   addLabelOnlyMarkers(data = golda_route[1,], ~fx, ~fy, label = HTML("Start<br>&#8595;"),
-            labelOptions = labelOptions(noHide = T, direction = "top", textOnly = TRUE,
+            labelOptions = labelOptions(noHide = T, direction = "top", textOnly = TRUE, 
                                         style = list(
-                                          "color" = "red",
+                                          "color" = "#080E46",
                                           "text-align" = "center",
-                                          "font-size" = "16px",
+                                          "font-size" = "10px",
+                                          "font-face" = "bold",
                                           "border-color" = "rgba(0,0,0,0.5)"))) %>% 
-addControl(html = paste(tags$h1(HTML("Visiting every<br>Golda location in TA"), style = "color:black; font-family:Merriweather; font-size: 26pt; padding-left: 8px; line-height: 1.2em;"),
-                        tags$div(HTML("Fastest route between all<br>golda ice-cream locations in<br>Tel-Aviv, IL"), style = "color:black; font-family:Segoe UI; font-size: 15pt; padding-left: 8px; margin-top:-20px")), className = "fieldset {
+addControl(html = paste(tags$h1(HTML("Golda locations<br>in Tel-Aviv 🍦"), style = "color:black; font-family:Rockwell; font-size: 26pt; padding-left: 8px; line-height: 1.2em;"),
+                        tags$div(HTML("Fastest route between all<br>Golda ice-cream locations<br>in Tel-Aviv."), style = "color:black; font-family:Segoe UI; font-size: 15pt; padding-left: 8px; margin-top:-20px")), className = "fieldset {
     border: 0;
 }",  position = "topleft") %>% 
-  addControl(html = tags$div(HTML("Data: openrouteservice &#8226; Amit_Levinson &#8226; <a href="), style = "color:black; font-family:Segoe UI; font-size: 12pt; padding-left: 15px;"), className = "fieldset {border: 0;}", position = "bottomleft")
+  addControl(html = tags$div(HTML("Data: Golda &#8226; Amit_Levinson &#8226; <a href=https://github.com/AmitLevinson/30daymapchallenge/blob/main/2021/20_movement/icecream.R>Code</a>"), style = "color:black; font-family:Segoe UI; font-size: 12pt; padding-left: 15px;"), className = "fieldset {border: 0;}", position = "bottomleft")
+
+
 
 # Save widget
-saveWidget(p, "2021/10_raster/walk_from_dizengof.html")
+saveWidget(p, "2021/20_movement/ice-cream.html")
 # Save snapshot
-webshot("2021/10_raster/walk_from_dizengof.html", file = "2021/10_raster/walking.png", zoom = 3, vwidth = 900, vheight = 700)
-
+webshot("2021/20_movement/ice-cream.html", file = "2021/20_movement/ice-cream_farthest.png", zoom = 3, vwidth = 900, vheight = 700, delay = 2)
 
