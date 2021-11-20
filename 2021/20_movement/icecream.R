@@ -116,7 +116,6 @@ addControl(html = paste(tags$h1(HTML("Golda locations<br>in Tel-Aviv 🍦"), sty
   addControl(html = tags$div(HTML("Data: Golda &#8226; Amit_Levinson &#8226; <a href=https://github.com/AmitLevinson/30daymapchallenge/blob/main/2021/20_movement/icecream.R>Code</a>"), style = "color:black; font-family:Segoe UI; font-size: 12pt; padding-left: 15px;"), className = "fieldset {border: 0;}", position = "bottomleft")
 
 
-
 # Save widget
 saveWidget(p, "2021/20_movement/ice-cream.html")
 # Save snapshot
