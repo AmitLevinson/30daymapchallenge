@@ -36,17 +36,14 @@ ta %>%
   geom_sf(aes(fill = n_borders), color = "gray5", size = 0.1)+
   annotate(geom = "curve", x = yarkon_arrow[1] -0.003, xend = yarkon_arrow[1] , y = yarkon_arrow[2] - 0.015, yend = yarkon_arrow[2]-0.003,
            curvature =.1,  color = "gray25", size = 0.5, arrow = arrow(length = unit(2, "mm")))+
-  geom_richtext(aes(x = yarkon_arrow[1] -0.003, y = yarkon_arrow[2] - 0.0155, label = "The *Yarkon*, bordering<br> 15 other neighbourhoods", hjust = 0, vjust = 1),label.color = NA,   fill = NA, size = 6, family = "Mukta", color = "gray35")+
-  labs(title = "Bordering Neighbourhoods in Tel-Aviv",
-       subtitle = "Number of neighbourhoods each neighbourhood borders in Tel-Aviv",
+  geom_richtext(aes(x = yarkon_arrow[1] -0.003, y = yarkon_arrow[2] - 0.0155, label = "The *Yarkon*, bordering<br>15 other neighborhoods", hjust = 0, vjust = 1),label.color = NA,   fill = NA, size = 6, family = "Mukta", color = "gray35")+
+  labs(title = "Bordering Neighborhoods in Tel-Aviv",
+       subtitle = "Number of neighborhoods each neighborhood borders in Tel-Aviv",
        caption = "@Amit_Levinson"
        )+
   scale_fill_viridis(name = "# borders",option="magma")+
-  guides(fill = guide_colorbar(barheight = unit(2.2, units = "mm"),
-                               barwidth = unit(45, units = "mm"),
-                               ticks.colour = "gray25",
-                               title.position = "top",
-                               label.position = "bottom",
+  guides(fill = guide_colorbar(barheight = unit(2.2, units = "mm"), barwidth = unit(45, units = "mm"),
+                               ticks.colour = "gray25", title.position = "top", label.position = "bottom",
                                title.hjust = 0.5))+
   theme_void()+
   theme(
