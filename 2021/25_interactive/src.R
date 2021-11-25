@@ -55,7 +55,7 @@ elderly <- map2_dfr(elderly_info$apiurl, elderly_info$apiname, clean_ta_api) %>%
 distances <- st_distance(bus_stops, elderly) %>% 
   as_tibble() 
 
-
+# Get the minimum distance, i.e. the nearest bus stop
 elderly_with_info <- elderly %>% 
   mutate(distance_to_bus = map_dbl(distances, function(x) min(x))) %>% 
   st_transform(crs = 4326)
