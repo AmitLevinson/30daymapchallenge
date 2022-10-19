@@ -136,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="relevant-libraries" class="level4">
 <h4 class="anchored" data-anchor-id="relevant-libraries">Relevant libraries</h4>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> googlemaps</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> getpass</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -152,12 +152,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>········</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_excel(<span class="st">'../potential_data/election-25_kalpi-places_kalpies_list_10_7_nagish.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
 
 <div>
 
@@ -249,152 +249,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <td></td>
       <td>543</td>
     </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>11542</th>
-      <td>20</td>
-      <td>כרמיאל</td>
-      <td>8800</td>
-      <td>שפרעם</td>
-      <td>39</td>
-      <td>21</td>
-      <td>אבו שהאב</td>
-      <td>בי"ס מקיף ד - אבו שהאב</td>
-      <td>כ</td>
-      <td>כ</td>
-      <td>733</td>
-    </tr>
-    <tr>
-      <th>11543</th>
-      <td>20</td>
-      <td>כרמיאל</td>
-      <td>8800</td>
-      <td>שפרעם</td>
-      <td>40</td>
-      <td>18</td>
-      <td>שפרעם</td>
-      <td>מרכז תרבות - מזרחי</td>
-      <td></td>
-      <td></td>
-      <td>553</td>
-    </tr>
-    <tr>
-      <th>11544</th>
-      <td>20</td>
-      <td>כרמיאל</td>
-      <td>8800</td>
-      <td>שפרעם</td>
-      <td>41</td>
-      <td>20</td>
-      <td>מרכז מסחר-ע עתיקה,1</td>
-      <td>בי"ס קתולי חדש</td>
-      <td>כ</td>
-      <td>כ</td>
-      <td>616</td>
-    </tr>
-    <tr>
-      <th>11545</th>
-      <td>20</td>
-      <td>כרמיאל</td>
-      <td>8800</td>
-      <td>שפרעם</td>
-      <td>42</td>
-      <td>19</td>
-      <td>שפרעם</td>
-      <td>בי"ס יסודי מרשאן</td>
-      <td></td>
-      <td></td>
-      <td>549</td>
-    </tr>
-    <tr>
-      <th>11546</th>
-      <td>20</td>
-      <td>כרמיאל</td>
-      <td>8800</td>
-      <td>שפרעם</td>
-      <td>43</td>
-      <td>19</td>
-      <td>שפרעם</td>
-      <td>בי"ס יסודי מרשאן</td>
-      <td></td>
-      <td></td>
-      <td>595</td>
-    </tr>
   </tbody>
 </table>
-<p>11547 rows × 11 columns</p>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rehovot_polls <span class="op">=</span> (data[data[<span class="st">'שם ישוב בחירות'</span>] <span class="op">==</span> <span class="st">"רחובות"</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> [<span class="st">'מקום קלפי'</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> .unique()</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>.tolist()</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rehovot_polls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
-<pre><code>['בי"ס נבון',
- 'מתנ"ס כפר גבירול ישן (בית תנוב',
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rehovot_polls[<span class="dv">1</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>['מתנ"ס כפר גבירול ישן (בית תנוב',
  'חט"צ ע"ש בגין',
  'בי"ס עץ חיים',
- 'תלמוד תורה ממד הראי"ה (הדרים)',
- 'מתנ"ס חוויות - נווה יהודה',
- 'בי"ס שפרינצק',
- 'ביה"ס ממ"ד סיני',
- 'בי"ס קציר ב\'',
- 'בי"ס קציר א',
- 'בי"ס המר',
- 'בי"ס ויצמן חדש',
- 'מכללה עירונית קמפוס רחובות',
- 'בי"ס בן צבי',
- 'תלמוד תורה "הראם"',
- 'בי"ס שריד',
- 'בי"ס בכור לוי',
- 'בי"ס סמילנסקי',
- 'בי"ס ממ"ד תחכמוני',
- 'ביס ממלכתי דתי בראשית',
- 'בי"ס תלמוד תורה חב"ד רחובות',
- 'ביה"ס בנות אסתר',
- 'בי"ס יבניאלי',
- 'בי"ס נועם הצבי-בנות',
- 'ביס ת"ת הבאר-לשעבר מפתן אלונים',
- 'בי"ס השיטה',
- 'בי"ס בן גוריון',
- 'מתנ"ס צפון חדש (חוויות)',
- 'מתנ"ס חשמונאים',
- 'אורט ברזילי',
- 'בי"ס נתיבות משה',
- 'היחידה להתפתחות הילד - חוויות',
- 'מתנס אושיות-מפעל הפיס',
- 'בי"ס אמי"ת',
- 'קרית חינוך למדעים (חדש)',
- 'בי"ס ויצו מקצועי',
- 'בי"ס ממ"ד מעלות משולם',
- 'בי"ס שזר',
- 'ביה"ס ממלכתי הרצוג',
- 'ביס אילן רמון',
- 'ביס פרחי המדע',
- 'בי"ס ניצני המדע',
- 'בי"ס שביט',
- 'מתנס חוויות ההולנדית']</code></pre>
+ 'תלמוד תורה ממד הראי"ה (הדרים)']</code></pre>
 </div>
 </div>
+<p>Great, we have a list of our polling locations, let’s go ahead and collect their geolocations.</p>
 </section>
 <section id="function-to-geocode-the-address-iterate-across-the-list" class="level4">
 <h4 class="anchored" data-anchor-id="function-to-geocode-the-address-iterate-across-the-list">Function to geocode the address &amp; iterate across the list</h4>
