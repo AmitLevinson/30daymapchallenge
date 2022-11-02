@@ -13,9 +13,9 @@ library(webshot)
 rehovot_path <- list.files('../data/maps/judicial/', recursive = T, pattern = 'gv_Rehovot_2016_plt\\.shp$')
 
 rehovot_sf <- st_read(paste0('../data/maps/judicial/', rehovot_path)) %>% 
-  st_transform(crs = 4326) %>%
+  st_transform(crs = 4326)# %>%
   # remove the holes (combine Gibton)
-  sfheaders::sf_remove_holes()
+  # sfheaders::sf_remove_holes()
 
 
 routes <- route(from = st_coordinates(st_sample(rehovot_sf, size = 1000)),
@@ -27,12 +27,10 @@ routes["count"] <- 1
 
 overlapping_segments <- overline(routes, attrib = "count")
 
-library(stplanr)
-
 p <- leaflet(overlapping_segments) %>% 
   addProviderTiles(providers$CartoDB.DarkMatter) %>%
   addPolylines(weight = overlapping_segments$count / 6, color = "white") %>% 
-  addControl(html = paste(tags$h1(HTML("Major routes <br>in Rehovot, Israel"), style = "color:white; font-family:Merriweather; font-size: 28pt; padding-left: 12px; line-height: 1.2em;"),
+  addControl(html = paste(tags$h1(HTML("Major routes <br>in Rehovot, Israel"), style = "color:white; font-family:Merriweather; font-size: 30pt; padding-left: 12px; line-height: 1.2em;"),
                           tags$div(HTML("Most commonly traveled roads<br>from a sample of 1000 routes."), style = "color:white; font-family:Segoe UI; font-size: 15pt; padding-left: 15px; margin-top:-20px"))
              , className = "fieldset {
     border: 0;
@@ -41,4 +39,4 @@ p <- leaflet(overlapping_segments) %>%
 
 # Saving a snapshot
 saveWidget(p, "02_lines/lines.html")
-webshot("02_lines/lines.html", file = "02_lines/lines.png", zoom = 3, vwidth = 900, vheight = 700)
+webshot("02_lines/lines.html", file = "02_lines/lines.png", zoom = 3, vwidth = 1000, vheight = 700, delay = 2)
