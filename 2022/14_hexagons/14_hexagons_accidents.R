@@ -2,6 +2,7 @@ library(sf)
 library(dplyr)
 library(ggplot2)
 library(readr)
+library(ggtext)
 
 rehovot_path <- list.files('data/maps/judicial/', recursive = T, pattern = 'gv_Rehovot_2016_plt\\.shp$')
 rehovot_sf <- st_read(paste0('data/maps/judicial/', rehovot_path)) %>% 
@@ -25,15 +26,13 @@ loc_clean <- loc %>%
 rehovot_accidents <- loc_clean[st_within(loc_clean, rehovot_sf, sparse = F),] %>% 
   st_transform(crs = 4326)
 
-hexagons_with_accidents <-  rehovot_accidents %>% 
-  mutate(accident = 1) %>% 
-  st_join(x = rehovot_grid, y = .) %>% 
-  select(id, geometry, accident) %>% 
-  group_by(id) %>% 
-  summarise(total = sum(accident, na.rm = T)) %>% 
-  mutate(total = ifelse(total == 0, NA, total))
 
-library(ggtext)
+
+
+hexagons_with_accidents <-  rehovot_grid %>% 
+  mutate(total = lengths(st_intersects(., rehovot_accidents)),
+         total = ifelse(total == 0, NA, total))
+
 ggplot(hexagons_with_accidents) +
   geom_sf(aes(fill = total), color = 'gray45', lwd = 0.25) +
   scale_fill_gradient(name = '# Accidents', low = '#000000', high = '#FF0000',  na.value = 'gray85', 
@@ -51,8 +50,8 @@ ggplot(hexagons_with_accidents) +
     plot.caption = element_markdown(hjust = 1, size = 12, color = "gray35"),
     axis.text = element_blank(),
     axis.title = element_blank(),
-    legend.title = element_text(size = 14),
-    legend.text = element_text(size = 10),
+    legend.title = element_text(size = 15),
+    legend.text = element_text(size = 12),
     legend.position = 'bottom',
     legend.key.height = unit(4, 'mm'),
     panel.grid = element_blank(),
