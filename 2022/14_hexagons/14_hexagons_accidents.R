@@ -40,7 +40,7 @@ ggplot(hexagons_with_accidents) +
                       breaks = seq(2,12,4))+
   guides(fill = guide_colorbar(title.position="top", title.hjust = 0.5))+
   labs(title = 'Car Accidents in Rehovot, IL',
-       subtitle = 'Number of car accidents per 500m<sup>2</sup> that occurred in 2019',
+       subtitle = 'Number of car accidents occurring in 2019 per 500m<sup>2</sup>',
        caption = 'Data: gov.il &#x2022; Amit Grinson')+
   theme_minimal()+
   theme(
@@ -61,5 +61,6 @@ ggplot(hexagons_with_accidents) +
     panel.background = element_rect(fill = 'white', color = NA)
   )
 
-ggsave('2022/14_hexagons/accidents.png', width = 11, height = 8)
+
+ggsave('2022/14_hexagons/accidents.png', width = 10, height = 8)
 
